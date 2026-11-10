@@ -51,7 +51,7 @@
 
 ## 自己做一台
 
-**3D 模型**：列印檔放在 MakerWorld，有興趣的人請到 [makerworld.com/zh/@OuterSky](https://makerworld.com/zh/@OuterSky) 搜尋列印。分左右兩版，依窗簾拉繩在窗框左邊或右邊選一組。
+**3D 模型**：列印檔放在 MakerWorld，有興趣的人請到這裡下載列印：[THOR on MakerWorld](https://makerworld.com/zh/models/3585217-thor-9-gravity-powered-automatic-curtain-opener#profileId-4105790)。分左右兩版，依窗簾拉繩在窗框左邊或右邊選一組。
 
 **列印**：PLA、零件平放。需要 4 組 M3×15 螺絲與螺帽固定 NodeMCU；SG90 用原附的自攻螺絲。
 

@@ -53,7 +53,7 @@ Prices are from Taiwanese shops.
 
 ## Build your own
 
-**3D model**: The printable files are on MakerWorld. Search for this project on [makerworld.com/zh/@OuterSky](https://makerworld.com/zh/@OuterSky). There are left and right versions; pick the one that matches the side of the window frame your curtain pull is on.
+**3D model**: The printable files are on MakerWorld. Get them here: [THOR on MakerWorld](https://makerworld.com/zh/models/3585217-thor-9-gravity-powered-automatic-curtain-opener#profileId-4105790). There are left and right versions; pick the one that matches the side of the window frame your curtain pull is on.
 
 **Print**: PLA, parts laid flat. You need 4 sets of M3×15 screws and nuts for the NodeMCU. The SG90 uses its own self-tapping screws.
 
