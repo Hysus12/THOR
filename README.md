@@ -1,72 +1,74 @@
 # THOR · 重槌日安
 
-**T**imed **H**ammer **O**pens **R**oom：時間一到，重槌落下，房間就亮了。
+English | [繁體中文](README.zh-TW.md)
 
-一台 300 元台(10美元)以內的自動開窗簾機。ESP8266 控制一顆 SG90 伺服馬達，平常扣住一罐硬幣；手機按「釋放」或排程時間到，扣子打開，硬幣罐往下掉，順勢把窗簾拉開。不用馬達硬拉，所以幾乎沒聲音。
+**T**imed **H**ammer **O**pens **R**oom: when the time comes, the hammer drops and the room lights up.
 
-| 手機遙控 | 排程開啟 |
+An automatic curtain opener for under NT$300 (about US$10). An ESP8266 drives one SG90 servo that holds a canister of coins. Tap "Release" on your phone, or let a schedule fire, and the latch opens. The canister drops and its weight pulls the curtain open. No motor drags the curtain, so it is almost silent.
+
+| Phone control | Scheduled opening |
 |:---:|:---:|
-| ![右側窗簾控制頁按下釋放](media/right_curtain.gif) | ![手錶倒數到 7:00，窗簾打開](media/alarm_7am.gif) |
+| ![Tapping Release on the control page opens the curtain](media/right_curtain.gif) | ![Watch counts down to 7:00 and the curtain opens](media/alarm_7am.gif) |
 
-## 怎麼運作
+## How it works
 
-<img src="media/cad.png" width="260" align="right" alt="機構示意：上方是伺服與鎖扣，下方綠色筒是硬幣配重">
+<img src="media/cad.png" width="260" align="right" alt="Mechanism: servo and latch on top, green coin canister below">
 
-1. 綠色筒子裡裝 93 個一元硬幣（約 350 g），用繩子連到窗簾。
-2. SG90 透過連桿扣住筒子上方的掛頭。
-3. 時間到或手機按「釋放」，伺服轉開扣子，筒子落下，窗簾被拉開。
-4. 晚上關窗簾時順手把筒子掛回去，幾秒鐘的事。
+1. The green canister holds 93 NT$1 coins (about 350 g) and is tied to the curtain.
+2. The SG90 holds the hook on top of the canister through a linkage.
+3. When the schedule fires or you tap "Release", the servo swings the latch open, the canister falls and the curtain is pulled open.
+4. At night, hang the canister back up when you close the curtain. It takes a few seconds.
 
-只負責早上打開；關窗簾還是要手動復位。
+THOR only opens the curtain in the morning. Closing it is still manual.
 
-控制頁直接放在 ESP8266 上，手機瀏覽器打開就能用：釋放、復歸鎖住、排程（最多 8 組）、手動調角度。畫面裡的像素窗簾會跟著當地天氣變化。
+The control page is served by the ESP8266 itself, so any phone browser on your Wi-Fi works. It has Release, Re-lock, up to 8 schedules and manual servo angle. The pixel-art curtain in the page follows your local weather. The page text is in Chinese.
 
-<img src="media/ui.png" width="320" alt="控制頁">
+<img src="media/ui.png" width="320" alt="Control page">
 
 <br clear="right">
 
-## 成本
+## Cost
 
-| 項目 | 金額 |
+Prices are from Taiwanese shops.
+
+| Item | NT$ | ≈ US$ |
+|---|---|---|
+| ESP8266 dev board (NodeMCU) | ~120 | ~3.8 |
+| SG90 servo | ~35 | ~1.1 |
+| Weight: 93 NT$1 coins | 93 | ~3.0 |
+| PLA filament, about 77 g | ~35 | ~1.1 |
+| **Total** | **~283** | **~9** |
+
+## Folders
+
+| Path | Contents |
 |---|---|
-| ESP8266 開發板（NodeMCU） | 約 120 元 |
-| SG90 伺服馬達 | 約 35 元 |
-| 配重：93 個一元硬幣 | 93 元 |
-| PLA 線材約 77 g | 約 35 元 |
-| **合計** | **約 283 元** |
+| `print/LEFT`, `print/RIGHT` | STL files. Pick the set that matches the side of the window frame your curtain pull is on |
+| `firmware/` | ESP8266 firmware (Arduino), build and Wi-Fi update scripts |
+| `web-ui/` | Control page source (Apple and Google styles). `mock_server.py` simulates the device on a computer |
+| `media/` | GIFs and images for this README |
 
+## Build your own
 
+**Print**: PLA, parts laid flat. You need 4 sets of M3×15 screws and nuts for the NodeMCU. The SG90 uses its own self-tapping screws.
 
-## 資料夾
+**Wiring**: SG90 signal to NodeMCU D5 (GPIO14), power to 5V / GND.
 
-| 路徑 | 內容 |
-|---|---|
-| `print/LEFT`、`print/RIGHT` | 列印用 STL，依窗簾拉繩在窗框左邊或右邊選一組 |
-| `firmware/` | ESP8266 韌體（Arduino）、建置與無線更新腳本 |
-| `web-ui/` | 控制頁原始碼（Apple／Google 兩種風格），`mock_server.py` 可在電腦上模擬 |
-| `media/` | README 用的 GIF 與圖片 |
+**Flashing**:
 
-## 自己做一台
-
-**列印**：PLA、零件平放。需要 4 組 M3×15 螺絲與螺帽固定 NodeMCU；SG90 用原附的自攻螺絲。
-
-**接線**：SG90 訊號線接 NodeMCU 的 D5（GPIO14），電源接 5V／GND。
-
-**燒錄**：
-
-1. 安裝 Arduino CLI 與 ESP8266 core 3.1.2，板型 `esp8266:esp8266:nodemcuv2:eesz=4M2M`。
-2. 把 `firmware/curtain_controller/secrets.example.h` 複製成 `secrets.h`，填入自己的 Wi-Fi 與更新密碼。
-3. 打開 `web-ui/scene.js`，把 `SKY_LOCATION` 改成你家附近的經緯度。
-4. 執行：
+1. Install Arduino CLI and ESP8266 core 3.1.2. Board: `esp8266:esp8266:nodemcuv2:eesz=4M2M`.
+2. Copy `firmware/curtain_controller/secrets.example.h` to `secrets.h` and fill in your Wi-Fi and update passwords.
+3. In `web-ui/scene.js`, set `SKY_LOCATION` to the latitude and longitude of your home.
+4. Run:
 
    ```powershell
    python firmware/build_controller.py --usb COM3
    ```
 
-   會一起燒入韌體和控制頁。之後可在控制頁「進階 → 裝置更新」用 Wi-Fi 更新。
+   This flashes both the firmware and the control page. Later updates can go over Wi-Fi from the control page under Advanced → Device update.
 
-專案路徑有中文時，舊版 ESP8266 工具鏈可能出錯，請把環境變數 `THOR_BUILD` 設成純英文路徑。
+If the project path contains non-ASCII characters, the older ESP8266 toolchain may fail. Set the `THOR_BUILD` environment variable to an ASCII-only path.
 
-## 備註
+## Notes
 
-機構和程式是跟 AI（Codex、Claude Code）邊做邊改出來的，在我家的窗簾上實測可用。每家窗簾的軌道摩擦和行程不同，配重可能要自己加減。
+The mechanism and code were built step by step with AI (Codex and Claude Code) and tested on the curtains in my home. Every curtain track has different friction and travel, so you may need to add or remove weight.
