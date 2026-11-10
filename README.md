@@ -21,11 +21,15 @@ An automatic curtain opener for under NT$300 (about US$10). An ESP8266 drives on
 
 THOR only opens the curtain in the morning. Closing it is still manual.
 
+<br clear="right">
+
+| Installed on the window frame | Slow motion: the weight drops |
+|:---:|:---:|
+| <img src="media/installed.jpg" height="440" alt="The device on the window frame: black case, SG90, coin canister below"> | <img src="media/drop_slowmo.gif" height="440" alt="Slow motion: the servo lets go and the coin canister falls"> |
+
 The control page is served by the ESP8266 itself, so any phone browser on your Wi-Fi works. It has Release, Re-lock, up to 8 schedules and manual servo angle. The pixel-art curtain in the page follows your local weather. The page text is in Chinese.
 
 <img src="media/ui_release.gif" width="320" alt="Control page: tap Release, tap again to confirm, the curtain opens">
-
-<br clear="right">
 
 ## Cost
 

@@ -21,11 +21,15 @@
 
 只負責早上打開；關窗簾還是要手動復位。
 
+<br clear="right">
+
+| 裝在窗框上的樣子 | 慢動作：配重落下 |
+|:---:|:---:|
+| <img src="media/installed.jpg" height="440" alt="裝在窗框上的實體：黑色外殼、SG90、下方硬幣筒"> | <img src="media/drop_slowmo.gif" height="440" alt="慢動作：伺服鬆開，硬幣筒往下掉"> |
+
 控制頁直接放在 ESP8266 上，手機瀏覽器打開就能用：釋放、復歸鎖住、排程（最多 8 組）、手動調角度。畫面裡的像素窗簾會跟著當地天氣變化。
 
 <img src="media/ui_release.gif" width="320" alt="控制頁：按釋放、再按一次確認，窗簾拉開">
-
-<br clear="right">
 
 ## 成本
 
