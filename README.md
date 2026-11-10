@@ -23,7 +23,7 @@ THOR only opens the curtain in the morning. Closing it is still manual.
 
 The control page is served by the ESP8266 itself, so any phone browser on your Wi-Fi works. It has Release, Re-lock, up to 8 schedules and manual servo angle. The pixel-art curtain in the page follows your local weather. The page text is in Chinese.
 
-<img src="media/ui.png" width="320" alt="Control page">
+<img src="media/ui_release.gif" width="320" alt="Control page: tap Release, tap again to confirm, the curtain opens">
 
 <br clear="right">
 
@@ -45,7 +45,7 @@ Prices are from Taiwanese shops.
 |---|---|
 | `print/LEFT`, `print/RIGHT` | STL files. Pick the set that matches the side of the window frame your curtain pull is on |
 | `firmware/` | ESP8266 firmware (Arduino), build and Wi-Fi update scripts |
-| `web-ui/` | Control page source (Apple and Google styles). `mock_server.py` simulates the device on a computer |
+| `web-ui/` | Control page source (Apple and Google styles). To try it on a computer, run `build.py`, then `mock_server.py`, and open <http://127.0.0.1:8770/> |
 | `media/` | GIFs and images for this README |
 
 ## Build your own

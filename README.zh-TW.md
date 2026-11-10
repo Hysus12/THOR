@@ -23,7 +23,7 @@
 
 控制頁直接放在 ESP8266 上，手機瀏覽器打開就能用：釋放、復歸鎖住、排程（最多 8 組）、手動調角度。畫面裡的像素窗簾會跟著當地天氣變化。
 
-<img src="media/ui.png" width="320" alt="控制頁">
+<img src="media/ui_release.gif" width="320" alt="控制頁：按釋放、再按一次確認，窗簾拉開">
 
 <br clear="right">
 
@@ -43,7 +43,7 @@
 |---|---|
 | `print/LEFT`、`print/RIGHT` | 列印用 STL，依窗簾拉繩在窗框左邊或右邊選一組 |
 | `firmware/` | ESP8266 韌體（Arduino）、建置與無線更新腳本 |
-| `web-ui/` | 控制頁原始碼（Apple／Google 兩種風格），`mock_server.py` 可在電腦上模擬 |
+| `web-ui/` | 控制頁原始碼（Apple／Google 兩種風格），想在電腦上試玩：先跑 `build.py`，再跑 `mock_server.py`，打開 <http://127.0.0.1:8770/> |
 | `media/` | README 用的 GIF 與圖片 |
 
 ## 自己做一台
