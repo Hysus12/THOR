@@ -49,7 +49,7 @@ Prices are from Taiwanese shops.
 |---|---|
 | `print/LEFT`, `print/RIGHT` | STL files. Pick the set that matches the side of the window frame your curtain pull is on |
 | `firmware/` | ESP8266 firmware (Arduino), build and Wi-Fi update scripts |
-| `web-ui/` | Control page source (Apple and Google styles). To try it on a computer, run `build.py`, then `mock_server.py`, and open <http://127.0.0.1:8770/> |
+| `web-ui/` | Control page source (Apple and Google styles). To try it on a computer, run `build.py`, then `mock_server.py`, and open the address it prints |
 | `media/` | GIFs and images for this README |
 
 ## Build your own

@@ -47,7 +47,7 @@
 |---|---|
 | `print/LEFT`、`print/RIGHT` | 列印用 STL，依窗簾拉繩在窗框左邊或右邊選一組 |
 | `firmware/` | ESP8266 韌體（Arduino）、建置與無線更新腳本 |
-| `web-ui/` | 控制頁原始碼（Apple／Google 兩種風格），想在電腦上試玩：先跑 `build.py`，再跑 `mock_server.py`，打開 <http://127.0.0.1:8770/> |
+| `web-ui/` | 控制頁原始碼（Apple／Google 兩種風格），想在電腦上試玩：先跑 `build.py`，再跑 `mock_server.py`，打開它印出來的網址 |
 | `media/` | README 用的 GIF 與圖片 |
 
 ## 自己做一台
