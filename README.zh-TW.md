@@ -45,12 +45,13 @@
 
 | 路徑 | 內容 |
 |---|---|
-| `print/LEFT`、`print/RIGHT` | 列印用 STL，依窗簾拉繩在窗框左邊或右邊選一組 |
 | `firmware/` | ESP8266 韌體（Arduino）、建置與無線更新腳本 |
 | `web-ui/` | 控制頁原始碼（Apple／Google 兩種風格），想在電腦上試玩：先跑 `build.py`，再跑 `mock_server.py`，打開它印出來的網址 |
 | `media/` | README 用的 GIF 與圖片 |
 
 ## 自己做一台
+
+**3D 模型**：列印檔放在 MakerWorld，有興趣的人請到 [makerworld.com/zh/@OuterSky](https://makerworld.com/zh/@OuterSky) 搜尋列印。分左右兩版，依窗簾拉繩在窗框左邊或右邊選一組。
 
 **列印**：PLA、零件平放。需要 4 組 M3×15 螺絲與螺帽固定 NodeMCU；SG90 用原附的自攻螺絲。
 

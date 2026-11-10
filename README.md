@@ -47,12 +47,13 @@ Prices are from Taiwanese shops.
 
 | Path | Contents |
 |---|---|
-| `print/LEFT`, `print/RIGHT` | STL files. Pick the set that matches the side of the window frame your curtain pull is on |
 | `firmware/` | ESP8266 firmware (Arduino), build and Wi-Fi update scripts |
 | `web-ui/` | Control page source (Apple and Google styles). To try it on a computer, run `build.py`, then `mock_server.py`, and open the address it prints |
 | `media/` | GIFs and images for this README |
 
 ## Build your own
+
+**3D model**: The printable files are on MakerWorld. Search for this project on [makerworld.com/zh/@OuterSky](https://makerworld.com/zh/@OuterSky). There are left and right versions; pick the one that matches the side of the window frame your curtain pull is on.
 
 **Print**: PLA, parts laid flat. You need 4 sets of M3×15 screws and nuts for the NodeMCU. The SG90 uses its own self-tapping screws.
 
